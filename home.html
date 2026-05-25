@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sikkim Monasteries</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* FULL PAGE FIX */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: #fdf6f0;
+    color: #333;
+}
+
+/* CONTAINER */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HEADER */
+header {
+    background: #6b3e26;
+    color: white;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+/* HERO SECTION (FIXED RESPONSIVE) */
+.hero {
+    background: url('pics/start.jpg') center/cover no-repeat;
+
+    /* 🔥 MAIN FIX */
+    min-height: calc(100vh - 100px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+}
+
+.hero button {
+    padding: 10px 25px;
+    font-size: 1rem;
+    border: none;
+    background-color: #6b3e26;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background-color: #4a2718;
+}
+
+/* FOOTER FIX */
+footer {
+    background: #6b3e26;
+    color: white;
+    text-align: center;
+    padding: 20px;
+
+    /* 🔥 PUSHES FOOTER TO BOTTOM */
+    margin-top: auto;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container">
+        <nav>
+            <h2>Sikkim Monasteries</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="all.html">Monasteries</a></li>
+                <li><a href="calender.html">Festival Calendar</a></li>
+                <li><a href="itenary.html">Itinerary</a></li>
+                <li><a href="accomadation.html">Hotels</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Explore the Spiritual Heritage of Sikkim</h1>
+    <p>Discover, Learn, and Experience the Monasteries Virtually</p>
+    <button onclick="window.location.href='all.html';">
+        Explore Monasteries
+    </button>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+    <p>Government of Sikkim website | Contact:
+        <a href="mailto:xyz@gmail.com" style="color:#f39c12;">
+            xyz@gmail.com
+        </a>
+    </p>
+    <p>&copy; 2025 Sikkim Monasteries</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sikkim Monastery Festival Calendar 2025</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #fdf6f0;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+    }
+    h2 {
+        text-align: center;
+        color: #6b3e26;
+        margin-bottom: 30px;
+    }
+
+    /* Calendar Grid */
+    .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .month-box {
+        position: relative;
+        height: 200px;
+        border-radius: 10px;
+        overflow: hidden;
+        color: white;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    /* Festival image with overlay */
+    .month-box img {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        opacity: 0.5;
+        z-index: 0;
+    }
+
+    /* Dark overlay to improve text readability */
+    .month-box::after {
+        content: '';
+        position: absolute;
+        top:0; left:0;
+        width:100%; height:100%;
+        background: rgba(0,0,0,0.4);
+        z-index: 0;
+    }
+
+    .month-name {
+        position: relative;
+        z-index: 1;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+    }
+
+    /* Responsive */
+    @media(max-width: 768px){
+        .calendar-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .month-box {
+            height: 150px;
+            font-size: 16px;
+        }
+    }
+
+    @media(max-width: 480px){
+        .calendar-grid {
+            grid-template-columns: 1fr;
+        }
+        .month-box {
+            height: 120px;
+            font-size: 14px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<h2>Sikkim Monastery Festival Calendar 2025</h2>
+
+<div class="calendar-grid">
+    <div class="month-box">
+        <img src="pics/jan.jpg" alt="Bumchu Festival">
+        <div class="month-name">January - Bumchu Festival</div>
+    </div>
+    <div class="month-box">
+        <img src="pics/feb.jpg" alt="Losar">
+        <div class="month-name">February - Losar</div>
+    </div>
+    <div class="month-box">
+        <img src="pics/march.jpg" alt="Saga Dawa">
+        <div class="month-name">March - Saga Dawa</div>
+    </div>
+    <div class="month-box">
+        <img src="pics/april.jpg" alt="Pang Lhabsol">
+        <div class="month-name">April - Pang Lhabsol</div>
+    </div>
+    <div class="month-box">
+        <img src="pics/may.jpg">
+        <div class="month-name">May - Saga Dawa Full Moon</div>
+    </div>
+    <div class="month-box">
+        <img src="pics/june.jpg" alt="Guru Rinpoche Birthday">
+        <div class="month-name">June - Guru Rinpoche Birthday</div>
+    </div>
+    <div class="month-box">
+        <img src="pics/july.jpg" alt="Guru Rinpoche Birthday">
+        <div class="month-name">July - Guru Rinpoche Birthday</div>
+    </div>
+    <div class="month-box">
+        <img src="pics/aug.jpeg" alt="Pang Lhabsol Cham Dance">
+        <div class="month-name">August - Pang Lhabsol Cham Dance</div>
+    </div>
+    <div class="month-box">
+        <img src="pics/sept.jpg" alt="Drupka Teshi">
+        <div class="month-name">September - Drupka Teshi</div>
+    </div>
+    <div class="month-box">
+        <img src="pics/oct.jpg" alt="Lhabab Duchen">
+        <div class="month-name">October - Lhabab Düchen</div>
+    </div>
+    <div class="month-box">
+        <img src="pics/nov.jpg" alt="Kagyed Dance Festival">
+        <div class="month-name">November - Kagyed Dance & Losoong</div>
+    </div>
+    <div class="month-box">
+        <img src="pics/dec.png" alt="Losoong">
+        <div class="month-name">December - Losoong</div>
+    </div>
+</div>
+
+</body>
+</html>

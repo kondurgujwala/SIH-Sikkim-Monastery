@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sikkim Trip Planner</title>
+<!-- Tailwind CDN for quick styling -->
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { background-color: #fdf6f0; }
+  .bg-card { background-color: #fffaf5; }
+  .text-theme { color: #6b3e26; }
+  .border-theme { border-color: #6b3e26; }
+  .btn-theme { background-color: #6b3e26; color: white; }
+  .btn-theme:hover { background-color: #53301d; }
+</style>
+</head>
+<body>
+<div id="root" class="min-h-screen p-6"></div>
+
+<!-- React and ReactDOM -->
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+<script>
+const { useState } = React;
+
+function SikkimTripPlanner() {
+  const [name, setName] = useState('My Sikkim Trip');
+  const [days, setDays] = useState(5);
+  const [style, setStyle] = useState('Balanced');
+  const [regions, setRegions] = useState({ East: true, West: false, North: false, South: false });
+  const [interests, setInterests] = useState({ Nature: true, Culture: true, Adventure: false, Relaxation: false });
+  const [itinerary, setItinerary] = useState(null);
+
+  const PLACES = {
+    East: [
+      { id: 'tsomgo', title: 'Tsomgo Lake', cat: 'Nature', notes: 'High-altitude lake near Gangtok.' },
+      { id: 'nathula', title: 'Nathula Pass', cat: 'Adventure', notes: 'Border pass; check permit.' },
+      { id: 'rumtek', title: 'Rumtek Monastery', cat: 'Culture', notes: 'Large monastery near Gangtok.' },
+      { id: 'mg', title: 'MG Marg (Gangtok)', cat: 'Relaxation', notes: 'Main promenade for food & shops.' }
+    ],
+    West: [
+      { id: 'pelling', title: 'Pelling & Pemayangtse', cat: 'Nature', notes: 'Views of Kanchenjunga.' },
+      { id: 'rabdentse', title: 'Rabdentse Ruins', cat: 'Culture', notes: 'Historic palace ruins near Pelling.' },
+      { id: 'khecheopalri', title: 'Khecheopalri Lake', cat: 'Nature', notes: 'Sacred lake near Pelling.' }
+    ],
+    North: [
+      { id: 'gurudongmar', title: 'Gurudongmar Lake', cat: 'Nature', notes: 'Very high altitude; acclimatize before visiting.' },
+      { id: 'yumthang', title: 'Yumthang Valley', cat: 'Nature', notes: 'Valley of Flowers (seasonal).' },
+      { id: 'lachung', title: 'Lachung & Lachen', cat: 'Culture', notes: 'Gateway towns for culture & mountain drives.' }
+    ],
+    South: [
+      { id: 'namchi', title: 'Namchi & Buddha Park', cat: 'Culture', notes: 'Huge Buddha statue and cultural sites.' },
+      { id: 'temi', title: 'Temi Tea Garden', cat: 'Relaxation', notes: 'Scenic tea gardens; great for walks.' },
+      { id: 'ravangla', title: 'Ravangla', cat: 'Nature', notes: 'Hiking and panoramic views.' }
+    ]
+  };
+
+  function toggleRegion(r) { setRegions(prev => ({ ...prev, [r]: !prev[r] })); }
+  function toggleInterest(i) { setInterests(prev => ({ ...prev, [i]: !prev[i] })); }
+
+  function generateItinerary() {
+    const selectedRegions = Object.keys(regions).filter(r => regions[r]);
+    if(selectedRegions.length===0){ alert('Select at least one region'); return; }
+    const totalDays = Math.floor(days);
+    const base = Math.max(1, Math.floor(totalDays / selectedRegions.length));
+    const remainder = totalDays - base * selectedRegions.length;
+    const regionDayAllocation = {};
+    selectedRegions.forEach((r, idx)=> regionDayAllocation[r] = base + (idx < remainder ? 1:0));
+
+    const daysList = [];
+    let currentDay = 1;
+
+    function pickPlaces(region, count) {
+      const pool = PLACES[region].filter(p => interests[p.cat] || Object.values(interests).every(x=>x));
+      const ordered = pool.sort((a,b)=> {
+        if(style==='Adventure') return a.cat==='Adventure'? -1:1;
+        if(style==='Relaxation') return a.cat==='Relaxation'? -1:1;
+        return 0;
+      });
+      const picks=[];
+      for(let i=0;i<count;i++){ if(ordered.length===0) break; picks.push(ordered[i % ordered.length]); }
+      return picks;
+    }
+
+    for(const region of selectedRegions){
+      const allocate = regionDayAllocation[region];
+      for(let d=0; d<allocate; d++){
+        const activities = pickPlaces(region, Math.min(3, PLACES[region].length));
+        daysList.push({ day: currentDay, region, activities: activities.map((p,i)=>({ time: i===0?'Morning':(i===1?'Afternoon':'Evening'), ...p })) });
+        currentDay++;
+      }
+    }
+
+    setItinerary({ title: name, days: totalDays, plan: daysList });
+  }
+
+  return React.createElement('div', { className: 'max-w-4xl mx-auto p-6 bg-card rounded-2xl shadow-lg mt-6' },
+    React.createElement('h1', { className: 'text-2xl font-bold mb-4 text-theme' }, 'Sikkim Trip Planner'),
+
+    React.createElement('label', { className: 'block text-theme mb-1' }, 'Trip Name'),
+    React.createElement('input', { value: name, onChange:e=>setName(e.target.value), className:'w-full p-2 border border-theme rounded mb-3' }),
+
+    React.createElement('label', { className: 'block text-theme mb-1' }, `Duration: ${days} days`),
+    React.createElement('input', { type:'range', min:1, max:30, value:days, onChange:e=>setDays(e.target.value), className:'w-full mb-3' }),
+
+    React.createElement('label', { className: 'block text-theme mb-1' }, 'Travel Style'),
+    React.createElement('select', { value: style, onChange:e=>setStyle(e.target.value), className:'w-full p-2 border border-theme rounded mb-3' },
+      React.createElement('option', null, 'Balanced'),
+      React.createElement('option', null, 'Adventure'),
+      React.createElement('option', null, 'Relaxation'),
+      React.createElement('option', null, 'Culture-focused')
+    ),
+
+    React.createElement('label', { className:'block text-theme mb-1' }, 'Regions to Visit'),
+    React.createElement('div', { className:'flex gap-2 flex-wrap mb-3' }, ['East','West','North','South'].map(r =>
+      React.createElement('button', { key:r, onClick:()=>toggleRegion(r), className:`px-3 py-1 rounded-full border ${regions[r]?'bg-theme text-white':''}`}, r)
+    )),
+
+    React.createElement('label', { className:'block text-theme mb-1' }, 'Interests'),
+    React.createElement('div', { className:'flex gap-2 flex-wrap mb-3' }, ['Nature','Culture','Adventure','Relaxation'].map(i =>
+      React.createElement('button', { key:i, onClick:()=>toggleInterest(i), className:`px-3 py-1 rounded-full border ${interests[i]?'bg-green-700 text-white':''}`}, i)
+    )),
+
+    React.createElement('button', { onClick: generateItinerary, className:'btn-theme px-4 py-2 rounded mt-2' }, 'Generate Itinerary'),
+
+    itinerary && React.createElement('div', { className:'mt-6' },
+      React.createElement('h2', { className:'text-xl font-semibold text-theme mb-2' }, `${itinerary.title} — ${itinerary.days} days`),
+      itinerary.plan.map(day =>
+        React.createElement('div', { key:day.day, className:'p-3 border border-theme rounded mb-2' },
+          React.createElement('strong', null, `Day ${day.day} — ${day.region}`),
+          React.createElement('ul', { className:'list-disc pl-5 mt-1' }, day.activities.map((a,i)=>
+            React.createElement('li', { key:a.id+i }, `${a.time}: ${a.title} (${a.cat}) - ${a.notes}`)
+          ))
+        )
+      )
+    )
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(React.createElement(SikkimTripPlanner));
+</script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rumtek Monastery</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fdf6f0;
+        color: #333;
+    }
+
+    header {
+        background-color: #6b3e26;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    header p {
+        margin: 5px 0 0 0;
+        font-size: 1.1rem;
+    }
+
+    /* Centered Slideshow */
+    .slideshow-wrapper {
+        max-width: 700px; /* medium size */
+        margin: 30px auto; /* center horizontally */
+    }
+
+    .slideshow-container {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        border-radius: 8px;
+    }
+
+    .slides {
+        display: none;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 12px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        border-radius: 0 3px 3px 0;
+        background-color: rgba(0,0,0,0.5);
+        user-select: none;
+    }
+
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Full-width sections with reduced spacing */
+    section {
+        width: 100%;
+        padding: 25px 50px; /* reduced vertical spacing */
+        box-sizing: border-box;
+    }
+
+    section h2 {
+        color: #6b3e26;
+        padding-bottom: 5px;
+        margin-bottom: 15px; /* slightly smaller margin */
+    }
+
+    section p, section li {
+        line-height: 1.6;
+        font-size: 1.1rem;
+    }
+
+    ul {
+        list-style: disc;
+        padding-left: 40px;
+    }
+
+    footer {
+        text-align: center;
+        background-color: #6b3e26;
+        color: white;
+        padding: 20px;
+    }
+
+    @media(max-width: 800px){
+        section {
+            padding: 20px 20px;
+        }
+        .slideshow-wrapper {
+            max-width: 90%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Rumtek Monastery</h1>
+    <p>Location: Rumtek, East Sikkim, India | Nearest Town: Gangtok (24 km)</p>
+</header>
+
+
+
+<!-- Centered Slideshow -->
+<div class="slideshow-wrapper">
+    <div class="slideshow-container">
+        
+        <img class="slides" src="https://timesofindia.indiatimes.com/thumb/msid-56621729,width-800,height-600,quality-80,overlay-times-travel/photo.jpg" alt="Rumtek 1">
+        <img class="slides" src="pics/3.jpg" alt="Rumtek 2">
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+</div>
+
+<!-- History Section -->
+<section>
+    <h2>🕉️ History</h2>
+    <p>
+        Rumtek Monastery, also known as the Dharma Chakra Centre, was originally founded in the 16th century by the 9th Karmapa Wangchuk Dorje. 
+        In the 1960s, it was rebuilt under the guidance of the 16th Karmapa, Rangjung Rigpe Dorje, to serve as the seat of the Karmapa Lama in exile. 
+        The monastery is a significant center for the Karma Kagyu lineage of Tibetan Buddhism and houses rare Buddhist religious artifacts and texts.
+    </p>
+</section>
+
+<iframe width="90%" height="500px" allowFullScreen="true" allow="accelerometer; magnetometer; gyroscope; xr-spatial-tracking" style="display:block; margin:20px auto; border:0 none; max-width:880px;border-radius:8px; box-shadow: 0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11);" src="https://panoraven.com/fr/embed/QisNgaVC8t"></iframe>
+<!-- Architecture Section -->
+<section>
+    <h2>🏯 Architecture</h2>
+    <ul>
+        <li><strong>Main Shrine Hall (Dharma Chakra Centre):</strong> Large prayer hall with intricate murals and statues of Buddhist deities.</li>
+        <li><strong>Golden Stupa:</strong> Enshrines relics of the 16th Karmapa, serving as a meditation focal point.</li>
+        <li><strong>Karma Shri Nalanda Institute:</strong> Buddhist study center, open to visitors 9:00 AM - 3:00 PM.</li>
+        <li><strong>Kora Path:</strong> Circumambulatory path for meditative walking with panoramic mountain views.</li>
+    </ul>
+</section>
+
+<!-- Festivals Section -->
+<section>
+    <h2>🎉 Festivals</h2>
+    <ul>
+        <li><strong>Chaam Dance:</strong> Traditional masked dance during Tibetan New Year (Losar) and Saga Dawa.</li>
+        <li><strong>Karmapa’s Birthday:</strong> Celebrated with prayers and rituals honoring the Karma Kagyu spiritual leader.</li>
+    </ul>
+</section>
+
+<!-- Visitor Info Section -->
+<section>
+    <h2>🕰️ Visitor Information</h2>
+    <ul>
+        <li><strong>Opening Hours:</strong> Daily from 6:00 AM to 6:00 PM</li>
+        <li><strong>Entry Fee:</strong> ₹10–20 per person</li>
+        <li><strong>Activities:</strong> Participate in daily rituals, explore prayer hall, admire murals, statues, gardens, and enjoy mountain views.</li>
+    </ul>
+</section>
+
+<!-- How to Reach Section -->
+<section>
+    <h2>🛤️ How to Reach</h2>
+    <p>
+        Rumtek Monastery is located about 24 km from Gangtok, the capital of Sikkim. Visitors can reach it by taxi or public bus from Gangtok.
+    </p>
+</section>
+
+<iframe class="cen" width="100%" height="450px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?q=ramtek%20monastery&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+
+<footer>
+    &copy; 2025 Rumtek Monastery Guide
+</footer>
+
+<!-- Slideshow JS -->
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slides");
+    for (let i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 3000);
+}
+
+function plusSlides(n) {
+    slideIndex += n - 1;
+    showSlides();
+}
+</script>
+
+</body>
+</html>

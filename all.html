@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monasteries of Sikkim</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fdf6f0;
+        color: #333;
+    }
+
+    header {
+        background-color: #6b3e26;
+        color: white;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    header p {
+        margin: 5px 0 0 0;
+        font-size: 1.2rem;
+    }
+
+    .monastery-grid {
+        background:url('pics/sikk.jpg') center/cover no-repeat;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+        gap: 20px;
+        padding: 30px 50px;
+    }
+
+    .monastery-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .monastery-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .monastery-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+
+    .monastery-card h2 {
+        margin: 15px 0 10px 0;
+        color: #6b3e26;
+    }
+
+    .monastery-card p {
+        padding: 0 15px 15px 15px;
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .monastery-card a {
+        display: inline-block;
+        margin-bottom: 15px;
+        padding: 8px 20px;
+        background-color: #6b3e26;
+        color: white;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
+
+    .monastery-card a:hover {
+        background-color: #4a2718;
+    }
+
+    footer {
+        text-align: center;
+        background-color: #6b3e26;
+        color: white;
+        padding: 20px;
+    }
+
+    @media(max-width: 1200px){
+        .monastery-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media(max-width: 900px){
+        .monastery-grid {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 20px;
+        }
+    }
+
+    @media(max-width: 600px){
+        .monastery-grid {
+            grid-template-columns: 1fr;
+            padding: 15px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Monasteries of Sikkim</h1>
+    <p>Explore the spiritual heritage and culture of Sikkim</p>
+</header>
+
+<div class="monastery-grid">
+    <div class="monastery-card">
+        <img src="pics/3.jpg" alt="Rumtek Monastery">
+        <h2>Rumtek Monastery</h2>
+        <p>Seat of the Karmapa Lama in exile and center of Karma Kagyu Buddhism.</p>
+        <a href="rumtek.html">View More</a>
+    </div>
+
+    <div class="monastery-card">
+        <img src="pics/4.jpg" alt="Pemayangtse Monastery">
+        <h2>Pemayangtse Monastery</h2>
+        <p>Founded in 1647, known for Cham Dance Festival and Nyingma traditions.</p>
+        <a href="pemayangtse.html">View More</a>
+    </div>
+
+    <div class="monastery-card">
+        <img src="pics/tashiding.jpg" alt="Tashiding Monastery">
+        <h2>Tashiding Monastery</h2>
+        <p>Hilltop monastery famous for the Bumchu Festival and panoramic valley views.</p>
+        <a href="tashiding.html">View More</a>
+    </div>
+
+    <div class="monastery-card">
+        <img src="pics/enchey.jpeg" alt="Enchey Monastery">
+        <h2>Enchey Monastery</h2>
+        <p>Near Gangtok, known for Detor Cham, Singhe Cham, and Pang Lhabsol festivals.</p>
+        <a href="enchey.html">View More</a>
+    </div>
+
+    <div class="monastery-card">
+        <img src="pics/phodong.jpg" alt="Phodong Monastery">
+        <h2>Phodong Monastery</h2>
+        <p>Founded in 1740, belonging to Karma Kagyu sect, known for Cham Dance Festival.</p>
+        <a href="phodong.html">View More</a>
+    </div>
+
+    <div class="monastery-card">
+        <img src="pics/ralang.jpeg" alt="Ralang Monastery">
+        <h2>Ralang Monastery</h2>
+        <p>Established in 1768, famous for Pang Lhabsol, Chaam, Kagyed, and Mahakala dances.</p>
+        <a href="ralang.html">View More</a>
+    </div>
+
+    <div class="monastery-card">
+        <img src="pics/dubdi.jpeg" alt="Dubdi Monastery">
+        <h2>Dubdi Monastery</h2>
+        <p>The oldest monastery in Sikkim, founded in 1701, part of the Buddhist pilgrimage circuit.</p>
+        <a href="dubdi.html">View More</a>
+    </div>
+
+    <div class="monastery-card">
+        <img src="pics/lingdum.jpeg" alt="Lingdum Monastery">
+        <h2>Lingdum Monastery</h2>
+        <p>Established in 1999, following Zurmang Kagyu tradition, known for Gutor Festival.</p>
+        <a href="lingdum.html">View More</a>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 Monasteries of Sikkim
+</footer>
+
+</body>
+</html>

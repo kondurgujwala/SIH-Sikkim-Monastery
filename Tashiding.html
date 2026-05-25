@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tashiding Monastery</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fdf6f0;
+        color: #333;
+    }
+
+    header {
+        background-color: #6b3e26;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+
+    header p {
+        margin: 5px 0 0 0;
+        font-size: 1.1rem;
+    }
+
+    /* Centered Slideshow */
+    .slideshow-wrapper {
+        max-width: 700px;
+        margin: 30px auto;
+    }
+
+    .slideshow-container {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        border-radius: 8px;
+    }
+
+    .slides {
+        display: none;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 12px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        border-radius: 0 3px 3px 0;
+        background-color: rgba(0,0,0,0.5);
+        user-select: none;
+    }
+
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Full-width sections with reduced spacing */
+    section {
+        width: 100%;
+        padding: 25px 50px;
+        box-sizing: border-box;
+    }
+
+    section h2 {
+        color: #6b3e26;
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+    }
+
+    section p, section li {
+        line-height: 1.6;
+        font-size: 1.1rem;
+    }
+
+    ul {
+        list-style: disc;
+        padding-left: 40px;
+    }
+
+    footer {
+        text-align: center;
+        background-color: #6b3e26;
+        color: white;
+        padding: 20px;
+    }
+
+    @media(max-width: 800px){
+        section {
+            padding: 20px 20px;
+        }
+        .slideshow-wrapper {
+            max-width: 90%;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Tashiding Monastery</h1>
+    <p>Location: Tashiding, Gyalshing, Sikkim, India | Nearest Towns: Gyalshing (27 km), Yuksom (16 km)</p>
+</header>
+
+<!-- Centered Slideshow -->
+<div class="slideshow-wrapper">
+    <div class="slideshow-container">
+        <img class="slides" src="https://upload.wikimedia.org/wikipedia/commons/0/04/Tashiding_Monastery.jpg" alt="Tashiding 1">
+        <img class="slides" src="https://www.sikkimtourism.gov.in/Public/Upload/ListingImages/Tashiding-monastery.jpg" alt="Tashiding 2">
+        <img class="slides" src="https://media-cdn.tripadvisor.com/media/photo-s/1c/2b/3f/tashiding-monastery.jpg" alt="Tashiding 3">
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+</div>
+
+<!-- History Section -->
+<section>
+    <h2>🕉️ History</h2>
+    <p>
+        Tashiding Monastery, founded in 1641 by Ngadak Sempa Chempo Phunshok Rigzing—one of the three wise men 
+        who consecrated Sikkim’s first king—is a revered center of Tibetan Buddhism. Expanded and renovated in 1717 
+        during the reign of the third Chogyal, Chakdor Namgyal, it is situated on a hilltop at the confluence of the 
+        Rathong and Rangeet rivers, offering panoramic views of valleys and Mount Khangchendzonga.
+    </p>
+</section>
+
+<iframe width="90%" height="500px" allowFullScreen="true" allow="accelerometer; magnetometer; gyroscope; xr-spatial-tracking" style="display:block; margin:20px auto; border:0 none; max-width:880px;border-radius:8px; box-shadow: 0 1px 1px rgba(0,0,0,0.11),0 2px 2px rgba(0,0,0,0.11),0 4px 4px rgba(0,0,0,0.11),0 6px 8px rgba(0,0,0,0.11),0 8px 16px rgba(0,0,0,0.11);" src="https://panoraven.com/fr/embed/ulvebfGfRy"></iframe>
+
+<!-- Architecture Section -->
+<section>
+    <h2>🏯 Architecture</h2>
+    <ul>
+        <li>Three-storied structure with intricately painted Tibetan designs in the main prayer hall (Dukhang).</li>
+        <li>Statues of Guru Padmasambhava and other revered figures.</li>
+        <li>Thong-Wa-Rang-Dol Chorten, a sacred stupa believed to cleanse sins with a glance.</li>
+        <li>Mani stone slabs inscribed with Buddhist mantras along pathways.</li>
+        <li>Surrounding stupas and prayer flags enhance the spiritual ambiance.</li>
+    </ul>
+</section>
+
+<!-- Festival Section -->
+<section>
+    <h2>🎉 Festival</h2>
+    <ul>
+        <li>Bumchu Festival celebrated annually on 14th–15th day of the first Tibetan month (usually February).</li>
+        <li>Sacred vase filled with holy water is opened to predict the coming year's prosperity.</li>
+        <li>Devotees from across the region gather for the ritual ceremony.</li>
+    </ul>
+</section>
+
+<!-- Visitor Info Section -->
+<section>
+    <h2>🕰️ Visitor Information</h2>
+    <ul>
+        <li><strong>Opening Hours:</strong> Daily from 10:00 AM to 4:00 PM</li>
+        <li><strong>Entry Fee:</strong> Free</li>
+        <li><strong>Activities:</strong> Observe rituals, explore Dukhang, admire murals, statues, gardens, and enjoy panoramic views of Mount Khangchendzonga.</li>
+    </ul>
+</section>
+
+<!-- How to Reach Section -->
+<section>
+    <h2>📍 How to Reach</h2>
+    <p>
+        Tashiding Monastery is approximately 27 km from Gyalshing and 16 km from Yuksom. 
+        Visitors can reach it by taxi or private vehicle, enjoying scenic views along the journey.
+    </p>
+</section>
+
+<iframe width="100%" height="450px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?q=ralang%20monastery&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+
+<footer>
+    &copy; 2025 Tashiding Monastery Guide
+</footer>
+
+<!-- Slideshow JS -->
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.getElementsByClassName("slides");
+    for (let i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    slides[slideIndex-1].style.display = "block";  
+    setTimeout(showSlides, 3000);
+}
+
+function plusSlides(n) {
+    slideIndex += n - 1;
+    showSlides();
+}
+</script>
+
+</body>
+</html>
